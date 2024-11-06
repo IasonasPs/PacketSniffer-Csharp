@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 class Program : Utilities
 {
-    
+
 
     public static async Task Main()
     {
@@ -23,19 +23,31 @@ class Program : Utilities
             Console.Clear();
             Console.WriteLine("Choose an option:");
             Console.WriteLine("1) Begin packet sniffing");
-            Console.WriteLine("2) Exit");
+            Console.WriteLine("2) Print CaptureDeviceList");
+            Console.WriteLine("9) Exit");
             Console.Write("\r\nSelect an option: \n");
             input = Console.ReadLine() ?? "";
+            string pattern = Utilities.GeneratePatternLine();
+
 
             switch (input)
             {
                 case "1":
-                    string pattern = Utilities.GeneratePatternLine();
                     Console.WriteLine(pattern);
                     Utilities.StartPacketSniffing();
                     Console.WriteLine(pattern);
                     break;
                 case "2":
+                    var devices = CaptureDeviceList.Instance;
+                    Console.WriteLine(pattern);
+                    devices.ToList().ForEach(li =>
+                    {
+                        Console.WriteLine(li);
+                        Console.WriteLine(pattern);
+                    });
+                    Console.ReadLine();
+                    break;
+                case "9":
                     Console.WriteLine("Exiting the application...");
                     //ExitApplication();
                     return;

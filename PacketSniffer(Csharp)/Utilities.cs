@@ -1,11 +1,14 @@
 ﻿using PacketDotNet;
 using SharpPcap;
+using System.Text;
 
 internal class Utilities
 {
-    static int delayTime = 5; // Default delay time in seconds
+    static double timeFrame = 1f; // Default delay time in seconds
     static bool isSniffing = false; // To track if sniffing is ongoing
     private static int packetSum = 0;
+    private static StringBuilder sb;
+    private static PcapWriter? pCapWriter;
 
     internal static void StartPacketSniffing()
     {
@@ -15,9 +18,11 @@ internal class Utilities
             return;
         }
 
+        pCapWriter = new PcapWriter(Environment.GetFolderPath(Environment.SpecialFolder.Desktop));
         isSniffing = true;
         //Task.Factory.StartNew(async () => await PacketSniffingProcess());
         PacketSniffingProcess();
+
     }
 
     internal static void PacketSniffingProcess()
@@ -26,26 +31,19 @@ internal class Utilities
         // Start the sniffing loop
         while (isSniffing)
         {
-            using (var cts = new CancellationTokenSource(TimeSpan.FromSeconds(delayTime)))
-            {
-                while (!cts.Token.IsCancellationRequested)
-                {
-                    InitializeCaptureDevicesCycle();  // This is where the sniffing happens, could be replaced with real 
-                }
-            }
-            Console.WriteLine($"Sniffing... {delayTime} seconds elapsed");
+            InitializeCaptureDevicesCycle();  // This is where the sniffing happens
 
-            //Check if the user wants to change the delay time or stop sniffing
+            //Check if the user wants to change timeFrame or stop sniffing
             Console.WriteLine("Press Enter to continue sniffing , or any key for other options ");
 
             var control = Console.ReadKey();
             if (control.Key != ConsoleKey.Enter)
             {
-                Console.WriteLine("Press spaceBar to change delay time, or any key to exit");
+                Console.WriteLine("Press spaceBar to change timeFrame, or any key to exit");
                 control = Console.ReadKey();
                 if (control.Key == ConsoleKey.Spacebar)  // Change delay time
                 {
-                    ChangeDelayTime();
+                    ChangeTimeFrame();
                 }
                 else  // Stop sniffing
                 {
@@ -56,8 +54,9 @@ internal class Utilities
         Console.WriteLine("Packet sniffing has stopped.");
     }
 
-    internal static void InitializeCaptureDevicesCycle(double timeFrame = 3f)
+    internal static void InitializeCaptureDevicesCycle()
     {
+        packetSum = 0;
         var devices = CaptureDeviceList.Instance;
 
         foreach (var item in devices) //This is a whole cycle of sniffing
@@ -88,6 +87,7 @@ internal class Utilities
             device.StopCapture();
             device.Close();
         }
+        pCapWriter.Close();
     }
 
     internal static void OnPacketArrival(object sender, PacketCapture e)
@@ -113,6 +113,7 @@ internal class Utilities
                 Console.WriteLine("Destination MAC: " + ethernetPacket.DestinationHardwareAddress);
             }
             Console.WriteLine(pattern);
+            pCapWriter.WritePacket(rawCapture);
         }
         catch (Exception ex)
         {
@@ -120,14 +121,14 @@ internal class Utilities
         }
     }
 
-    static void ChangeDelayTime()
+    static void ChangeTimeFrame()
     {
         Console.Write("Enter new delay time in seconds: ");
-        int newDelay;
-        if (int.TryParse(Console.ReadLine(), out newDelay) && newDelay > 0)
+        int newFrame;
+        if (int.TryParse(Console.ReadLine(), out newFrame) && newFrame > 0)
         {
-            delayTime = newDelay;
-            Console.WriteLine($"Delay time changed to {delayTime} seconds.");
+            timeFrame = newFrame;
+            Console.WriteLine($"Delay time changed to {timeFrame} seconds.");
         }
         else
         {
@@ -149,6 +150,5 @@ internal class Utilities
     {
         Console.WriteLine("\nStopping packet sniffing...");
         isSniffing = false;
-        //sniffingThread.Join();  // Wait for the sniffing thread to finish
     }
 }

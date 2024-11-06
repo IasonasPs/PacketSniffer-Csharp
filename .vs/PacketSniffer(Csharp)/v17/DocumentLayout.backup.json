@@ -7,18 +7,22 @@
       "RelativeMoniker": "D:0:0:{7FE20285-E345-45BB-AC46-9A45DCB761A3}|PacketSniffer(Csharp)\\PacketSniffer(Csharp).csproj|solutionrelative:packetsniffer(csharp)\\utilities.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{7FE20285-E345-45BB-AC46-9A45DCB761A3}|PacketSniffer(Csharp)\\PacketSniffer(Csharp).csproj|c:\\users\\iasonas.psomadakis\\source\\repos\\packetsniffer(csharp)\\packetsniffer(csharp)\\pcapwriter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7FE20285-E345-45BB-AC46-9A45DCB761A3}|PacketSniffer(Csharp)\\PacketSniffer(Csharp).csproj|solutionrelative:packetsniffer(csharp)\\pcapwriter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{7FE20285-E345-45BB-AC46-9A45DCB761A3}|PacketSniffer(Csharp)\\PacketSniffer(Csharp).csproj|c:\\users\\iasonas.psomadakis\\source\\repos\\packetsniffer(csharp)\\packetsniffer(csharp)\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7FE20285-E345-45BB-AC46-9A45DCB761A3}|PacketSniffer(Csharp)\\PacketSniffer(Csharp).csproj|solutionrelative:packetsniffer(csharp)\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
     {
-      "Orientation": 1,
+      "Orientation": 0,
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedHeight": 169,
-          "SelectedChildIndex": 22,
+          "DockedWidth": 59,
+          "SelectedChildIndex": 21,
           "Children": [
             {
               "$type": "Bookmark",
@@ -98,21 +102,17 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:1:0:{a80febb4-e7e0-4147-b476-21aaf2453969}"
-            },
-            {
-              "$type": "Bookmark",
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\iasonas.psomadakis\\source\\repos\\PacketSniffer(Csharp)\\PacketSniffer(Csharp)\\Program.cs",
               "RelativeDocumentMoniker": "PacketSniffer(Csharp)\\Program.cs",
               "ToolTip": "C:\\Users\\iasonas.psomadakis\\source\\repos\\PacketSniffer(Csharp)\\PacketSniffer(Csharp)\\Program.cs",
               "RelativeToolTip": "PacketSniffer(Csharp)\\Program.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAA+wCIAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAAC4AAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-06T16:53:29.029Z",
               "EditorCaption": ""
@@ -125,7 +125,7 @@
               "RelativeDocumentMoniker": "PacketSniffer(Csharp)\\Utilities.cs",
               "ToolTip": "C:\\Users\\iasonas.psomadakis\\source\\repos\\PacketSniffer(Csharp)\\PacketSniffer(Csharp)\\Utilities.cs",
               "RelativeToolTip": "PacketSniffer(Csharp)\\Utilities.cs",
-              "ViewState": "AgIAADYAAAAAAAAAAAAYwDoAAABLAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-06T17:39:52.306Z",
               "EditorCaption": ""
@@ -133,7 +133,7 @@
           ]
         },
         {
-          "DockedHeight": 423,
+          "DockedWidth": 99,
           "SelectedChildIndex": -1,
           "Children": [
             {
@@ -151,7 +151,7 @@
           ]
         },
         {
-          "DockedHeight": 251,
+          "DockedWidth": 200,
           "SelectedChildIndex": -1,
           "Children": [
             {
@@ -161,6 +161,40 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "FloatingWindowState": {
+        "Id": "a53fbb3f-9c3a-43f0-bf76-b44d2b1a859e",
+        "Display": 1,
+        "X": -5,
+        "Y": 0,
+        "Width": 897,
+        "Height": 869,
+        "WindowState": 2
+      },
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PcapWriter.cs",
+              "DocumentMoniker": "C:\\Users\\iasonas.psomadakis\\source\\repos\\PacketSniffer(Csharp)\\PacketSniffer(Csharp)\\PcapWriter.cs",
+              "RelativeDocumentMoniker": "PacketSniffer(Csharp)\\PcapWriter.cs",
+              "ToolTip": "C:\\Users\\iasonas.psomadakis\\source\\repos\\PacketSniffer(Csharp)\\PacketSniffer(Csharp)\\PcapWriter.cs",
+              "RelativeToolTip": "PacketSniffer(Csharp)\\PcapWriter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T21:26:06.393Z",
+              "EditorCaption": ""
             }
           ]
         }

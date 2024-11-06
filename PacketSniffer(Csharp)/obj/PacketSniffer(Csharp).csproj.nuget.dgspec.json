@@ -1,32 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\iasonas.psomadakis\\source\\repos\\PacketSniffer(Csharp)\\PacketSniffer(Csharp)\\PacketSniffer(Csharp).csproj": {}
+    "/Users/iasonas/Desktop/PacketSniffer-Csharp-/PacketSniffer(Csharp)/PacketSniffer(Csharp).csproj": {}
   },
   "projects": {
-    "C:\\Users\\iasonas.psomadakis\\source\\repos\\PacketSniffer(Csharp)\\PacketSniffer(Csharp)\\PacketSniffer(Csharp).csproj": {
+    "/Users/iasonas/Desktop/PacketSniffer-Csharp-/PacketSniffer(Csharp)/PacketSniffer(Csharp).csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\iasonas.psomadakis\\source\\repos\\PacketSniffer(Csharp)\\PacketSniffer(Csharp)\\PacketSniffer(Csharp).csproj",
+        "projectUniqueName": "/Users/iasonas/Desktop/PacketSniffer-Csharp-/PacketSniffer(Csharp)/PacketSniffer(Csharp).csproj",
         "projectName": "PacketSniffer(Csharp)",
-        "projectPath": "C:\\Users\\iasonas.psomadakis\\source\\repos\\PacketSniffer(Csharp)\\PacketSniffer(Csharp)\\PacketSniffer(Csharp).csproj",
-        "packagesPath": "C:\\Users\\iasonas.psomadakis\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\iasonas.psomadakis\\source\\repos\\PacketSniffer(Csharp)\\PacketSniffer(Csharp)\\obj\\",
+        "projectPath": "/Users/iasonas/Desktop/PacketSniffer-Csharp-/PacketSniffer(Csharp)/PacketSniffer(Csharp).csproj",
+        "packagesPath": "/Users/iasonas/.nuget/packages/",
+        "outputPath": "/Users/iasonas/Desktop/PacketSniffer-Csharp-/PacketSniffer(Csharp)/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\iasonas.psomadakis\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/iasonas/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
+          "/usr/local/share/dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -71,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.301/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

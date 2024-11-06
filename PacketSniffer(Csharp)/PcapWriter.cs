@@ -20,7 +20,7 @@ public class PcapWriter
         {
             Console.WriteLine("Bingo!");
             Console.WriteLine(e.Message);
-            Console.WriteLine(e.InnerException.Message);
+            // Console.WriteLine(e.InnerException.Message);
         }
         _writer = new BinaryWriter(_fileStream);
 

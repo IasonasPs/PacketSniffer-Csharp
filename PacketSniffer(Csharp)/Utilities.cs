@@ -4,10 +4,9 @@ using System.Text;
 
 internal class Utilities
 {
-    static double timeFrame = 1f; // Default delay time in seconds
+    static double timeFrame = 2f; // Default delay time in seconds
     static bool isSniffing = false; // To track if sniffing is ongoing
     private static int packetSum = 0;
-    private static StringBuilder sb;
     private static PcapWriter? pCapWriter;
 
     internal static void StartPacketSniffing()
@@ -18,7 +17,10 @@ internal class Utilities
             return;
         }
 
-        pCapWriter = new PcapWriter(Environment.GetFolderPath(Environment.SpecialFolder.Desktop));
+        string filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "output.pcap");
+
+
+        pCapWriter = new PcapWriter(filePath);
         isSniffing = true;
         //Task.Factory.StartNew(async () => await PacketSniffingProcess());
         PacketSniffingProcess();
@@ -87,7 +89,8 @@ internal class Utilities
             device.StopCapture();
             device.Close();
         }
-        pCapWriter.Close();
+        pCapWriter?.Close();
+        Console.WriteLine();
     }
 
     internal static void OnPacketArrival(object sender, PacketCapture e)
@@ -113,7 +116,7 @@ internal class Utilities
                 Console.WriteLine("Destination MAC: " + ethernetPacket.DestinationHardwareAddress);
             }
             Console.WriteLine(pattern);
-            pCapWriter.WritePacket(rawCapture);
+            pCapWriter?.WritePacket(rawCapture);
         }
         catch (Exception ex)
         {
@@ -123,16 +126,16 @@ internal class Utilities
 
     static void ChangeTimeFrame()
     {
-        Console.Write("Enter new delay time in seconds: ");
+        Console.Write("Enter new timeFrame in seconds: ");
         int newFrame;
         if (int.TryParse(Console.ReadLine(), out newFrame) && newFrame > 0)
         {
             timeFrame = newFrame;
-            Console.WriteLine($"Delay time changed to {timeFrame} seconds.");
+            Console.WriteLine($"timeFrame changed to {timeFrame} seconds.");
         }
         else
         {
-            Console.WriteLine("Invalid delay time entered. Please enter a positive number.");
+            Console.WriteLine("Invalid timeFrame entered. Please enter a positive number.");
         }
     }
 

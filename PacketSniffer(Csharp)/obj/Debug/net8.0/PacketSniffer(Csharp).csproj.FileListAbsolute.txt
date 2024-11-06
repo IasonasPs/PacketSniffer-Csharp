@@ -10,6 +10,7 @@ C:\Users\iasonas.psomadakis\source\repos\PacketSniffer(Csharp)\PacketSniffer(Csh
 C:\Users\iasonas.psomadakis\source\repos\PacketSniffer(Csharp)\PacketSniffer(Csharp)\obj\Debug\net8.0\PacketSniffer(Csharp).AssemblyInfoInputs.cache
 C:\Users\iasonas.psomadakis\source\repos\PacketSniffer(Csharp)\PacketSniffer(Csharp)\obj\Debug\net8.0\PacketSniffer(Csharp).AssemblyInfo.cs
 C:\Users\iasonas.psomadakis\source\repos\PacketSniffer(Csharp)\PacketSniffer(Csharp)\obj\Debug\net8.0\PacketSniffer(Csharp).csproj.CoreCompileInputs.cache
+C:\Users\iasonas.psomadakis\source\repos\PacketSniffer(Csharp)\PacketSniffer(Csharp)\obj\Debug\net8.0\PacketSniffer(Csharp).sourcelink.json
 C:\Users\iasonas.psomadakis\source\repos\PacketSniffer(Csharp)\PacketSniffer(Csharp)\obj\Debug\net8.0\PacketSn.13EDAC3A.Up2Date
 C:\Users\iasonas.psomadakis\source\repos\PacketSniffer(Csharp)\PacketSniffer(Csharp)\obj\Debug\net8.0\PacketSniffer(Csharp).dll
 C:\Users\iasonas.psomadakis\source\repos\PacketSniffer(Csharp)\PacketSniffer(Csharp)\obj\Debug\net8.0\refint\PacketSniffer(Csharp).dll

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PacketSniffer(Csharp)")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+339acbd1549315e24b4a4a8cdac8ba83a8fd47a8")]
 [assembly: System.Reflection.AssemblyProductAttribute("PacketSniffer(Csharp)")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PacketSniffer(Csharp)")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

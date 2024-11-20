@@ -1,5 +1,5 @@
 ﻿using SharpPcap;
-
+using System;
 internal static class Menu
 {
     internal static void MainMenu()
@@ -12,6 +12,8 @@ internal static class Menu
             Console.WriteLine("1) Begin packet sniffing");
             Console.WriteLine("2) Print CaptureDeviceList");
             Console.WriteLine("9) Exit");
+            Console.WriteLine();
+            Console.WriteLine("<<Default delay time for every capture device is 3 seconds");
             Console.Write("\r\nSelect an option: \n");
             input = Console.ReadLine() ?? "";
             string pattern = Utilities.GeneratePatternLine();

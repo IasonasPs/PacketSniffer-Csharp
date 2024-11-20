@@ -4,7 +4,7 @@ using System.Text;
 
 internal class Utilities
 {
-    static double timeFrame = 2f; // Default delay time in seconds
+    static double timeFrame = 3f; // Default delay time in seconds
     static bool isSniffing = false; // To track if sniffing is ongoing
     private static int packetSum = 0;
     private static PcapWriter? pCapWriter;
@@ -95,13 +95,14 @@ internal class Utilities
 
     internal static void OnPacketArrival(object sender, PacketCapture e)
     {
+        RawCapture? rawCapture = null;
+        string pattern = GeneratePatternLine("_*");
         try
         {
             packetSum++;
-            string pattern = GeneratePatternLine("_*");
 
             // Get the raw packet data
-            var rawCapture = e.GetPacket();  // Retrieve the captured packet
+            rawCapture = e.GetPacket();  // Retrieve the captured packet
             var packet = Packet.ParsePacket(rawCapture.LinkLayerType, rawCapture.Data);
             Console.WriteLine(pattern);
             Console.WriteLine($"Got {packetSum} packet");
@@ -116,11 +117,18 @@ internal class Utilities
                 Console.WriteLine("Destination MAC: " + ethernetPacket.DestinationHardwareAddress);
             }
             Console.WriteLine(pattern);
-            pCapWriter?.WritePacket(rawCapture);
         }
         catch (Exception ex)
         {
             Console.WriteLine($"Error processing packet: {ex.Message}");
+        }
+        if (rawCapture is not null)
+        {
+            pCapWriter?.WritePacket(rawCapture);
+        }
+        else
+        {
+            Console.WriteLine("Packet is null..");
         }
     }
 

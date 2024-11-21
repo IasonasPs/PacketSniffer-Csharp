@@ -19,7 +19,6 @@ internal class Utilities
 
         string filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "output.pcap");
 
-
         pCapWriter = new PcapWriter(filePath);
         isSniffing = true;
         //Task.Factory.StartNew(async () => await PacketSniffingProcess());
@@ -29,6 +28,10 @@ internal class Utilities
 
     internal static void PacketSniffingProcess()
     {
+        bool atStart = true;
+        Console.WriteLine("Press Space to change time Frame or any key to continue with default value");
+        HandleUserInput(atStart);
+        atStart = false;
         Console.WriteLine("Packet sniffing started...\n");
         // Start the sniffing loop
         while (isSniffing)
@@ -36,24 +39,34 @@ internal class Utilities
             InitializeCaptureDevicesCycle();  // This is where the sniffing happens
 
             //Check if the user wants to change timeFrame or stop sniffing
-            Console.WriteLine("Press Enter to continue sniffing , or any key for other options ");
+            Console.WriteLine("Press Enter to continue sniffing, spaceBar to change timeFrame, or any key to exit");
 
-            var control = Console.ReadKey();
-            if (control.Key != ConsoleKey.Enter)
-            {
-                Console.WriteLine("Press spaceBar to change timeFrame, or any key to exit");
-                control = Console.ReadKey();
-                if (control.Key == ConsoleKey.Spacebar)  // Change delay time
-                {
-                    ChangeTimeFrame();
-                }
-                else  // Stop sniffing
-                {
-                    StopPacketSniffing();
-                }
-            }
+            HandleUserInput(atStart);
         }
         Console.WriteLine("Packet sniffing has stopped.");
+    }
+
+    private static void HandleUserInput(bool atStart)
+    {
+        ConsoleKeyInfo control;
+        if (!atStart)
+        {
+            Console.WriteLine("Press spaceBar to change timeFrame, or any key to exit");
+        }
+
+        control = Console.ReadKey();
+        if (control.Key == ConsoleKey.Spacebar )  // Change delay time
+        {
+            ChangeTimeFrame();
+        }
+        else if (control.Key == ConsoleKey.Enter)//continue sniffing
+        {
+            return;
+        }
+        else if(!atStart)// Stop sniffing
+        {
+            StopPacketSniffing();
+        }
     }
 
     internal static void InitializeCaptureDevicesCycle()

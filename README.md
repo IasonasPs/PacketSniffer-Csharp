@@ -17,7 +17,6 @@ PacketSniffer-Csharp is a basic packet sniffer application developed in C#. It c
 ## Features
 - Capture network packets in real-time.
 - Display packet details including source, destination, protocol, and data.
-- Filter packets based on criteria such as protocol type.
 - Save captured packets to a file for later analysis.
 
 ## Installation
@@ -45,10 +44,8 @@ To install and run PacketSniffer-Csharp, follow these steps:
     - Click the `Start` button to begin capturing network packets.
 3. **View packet details:**
     - Captured packets will be displayed in the main window with details such as source, destination, and protocol.
-4. **Filter packets:**
-    - Use the filter options to display only the packets that match your criteria.
 5. **Save captured packets:**
-    - Click the `Save` button to save the captured packets to a file.
+   - The captured packets are save to a file named output.pcap on the desktop.
 
 ## Contributing
 Contributions are welcome! If you have any improvements or bug fixes, feel free to create a pull request. Please ensure your code follows the project's coding standards and includes appropriate tests.
